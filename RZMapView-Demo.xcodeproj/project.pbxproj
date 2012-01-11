@@ -1,0 +1,321 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FE88F73114BE4D1400EBA4E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE88F73014BE4D1400EBA4E3 /* UIKit.framework */; };
+		FE88F73314BE4D1400EBA4E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE88F73214BE4D1400EBA4E3 /* Foundation.framework */; };
+		FE88F73514BE4D1400EBA4E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE88F73414BE4D1400EBA4E3 /* CoreGraphics.framework */; };
+		FE88F73B14BE4D1400EBA4E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE88F73914BE4D1400EBA4E3 /* InfoPlist.strings */; };
+		FE88F73D14BE4D1400EBA4E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88F73C14BE4D1400EBA4E3 /* main.m */; };
+		FE88F74114BE4D1400EBA4E3 /* RZMapViewAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88F74014BE4D1400EBA4E3 /* RZMapViewAppDelegate.m */; };
+		FE88F74414BE4D1400EBA4E3 /* RZMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88F74314BE4D1400EBA4E3 /* RZMapViewController.m */; };
+		FE88F74714BE4D1400EBA4E3 /* RZMapViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE88F74514BE4D1400EBA4E3 /* RZMapViewController_iPhone.xib */; };
+		FE88F74A14BE4D1400EBA4E3 /* RZMapViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE88F74814BE4D1400EBA4E3 /* RZMapViewController_iPad.xib */; };
+		FE88F75B14BE4D7800EBA4E3 /* RZMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88F75614BE4D7800EBA4E3 /* RZMapView.m */; };
+		FE88F75C14BE4D7800EBA4E3 /* RZMapViewLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88F75814BE4D7800EBA4E3 /* RZMapViewLocation.m */; };
+		FE88F75D14BE4D7800EBA4E3 /* RZMapViewPin.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88F75A14BE4D7800EBA4E3 /* RZMapViewPin.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FE88F72C14BE4D1400EBA4E3 /* RZMapView-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RZMapView-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE88F73014BE4D1400EBA4E3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FE88F73214BE4D1400EBA4E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FE88F73414BE4D1400EBA4E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FE88F73814BE4D1400EBA4E3 /* RZMapView-Demo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RZMapView-Demo-Info.plist"; sourceTree = "<group>"; };
+		FE88F73A14BE4D1400EBA4E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FE88F73C14BE4D1400EBA4E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FE88F73E14BE4D1400EBA4E3 /* RZMapView-Demo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RZMapView-Demo-Prefix.pch"; sourceTree = "<group>"; };
+		FE88F73F14BE4D1400EBA4E3 /* RZMapViewAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZMapViewAppDelegate.h; sourceTree = "<group>"; };
+		FE88F74014BE4D1400EBA4E3 /* RZMapViewAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RZMapViewAppDelegate.m; sourceTree = "<group>"; };
+		FE88F74214BE4D1400EBA4E3 /* RZMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZMapViewController.h; sourceTree = "<group>"; };
+		FE88F74314BE4D1400EBA4E3 /* RZMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RZMapViewController.m; sourceTree = "<group>"; };
+		FE88F74614BE4D1400EBA4E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RZMapViewController_iPhone.xib; sourceTree = "<group>"; };
+		FE88F74914BE4D1400EBA4E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RZMapViewController_iPad.xib; sourceTree = "<group>"; };
+		FE88F75514BE4D7800EBA4E3 /* RZMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZMapView.h; sourceTree = "<group>"; };
+		FE88F75614BE4D7800EBA4E3 /* RZMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZMapView.m; sourceTree = "<group>"; };
+		FE88F75714BE4D7800EBA4E3 /* RZMapViewLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZMapViewLocation.h; sourceTree = "<group>"; };
+		FE88F75814BE4D7800EBA4E3 /* RZMapViewLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZMapViewLocation.m; sourceTree = "<group>"; };
+		FE88F75914BE4D7800EBA4E3 /* RZMapViewPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZMapViewPin.h; sourceTree = "<group>"; };
+		FE88F75A14BE4D7800EBA4E3 /* RZMapViewPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZMapViewPin.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE88F72914BE4D1400EBA4E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE88F73114BE4D1400EBA4E3 /* UIKit.framework in Frameworks */,
+				FE88F73314BE4D1400EBA4E3 /* Foundation.framework in Frameworks */,
+				FE88F73514BE4D1400EBA4E3 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FE88F72114BE4D1400EBA4E3 = {
+			isa = PBXGroup;
+			children = (
+				FE88F75414BE4D7800EBA4E3 /* RZMapView */,
+				FE88F73614BE4D1400EBA4E3 /* RZMapView-Demo */,
+				FE88F72F14BE4D1400EBA4E3 /* Frameworks */,
+				FE88F72D14BE4D1400EBA4E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FE88F72D14BE4D1400EBA4E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE88F72C14BE4D1400EBA4E3 /* RZMapView-Demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE88F72F14BE4D1400EBA4E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE88F73014BE4D1400EBA4E3 /* UIKit.framework */,
+				FE88F73214BE4D1400EBA4E3 /* Foundation.framework */,
+				FE88F73414BE4D1400EBA4E3 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE88F73614BE4D1400EBA4E3 /* RZMapView-Demo */ = {
+			isa = PBXGroup;
+			children = (
+				FE88F73F14BE4D1400EBA4E3 /* RZMapViewAppDelegate.h */,
+				FE88F74014BE4D1400EBA4E3 /* RZMapViewAppDelegate.m */,
+				FE88F74214BE4D1400EBA4E3 /* RZMapViewController.h */,
+				FE88F74314BE4D1400EBA4E3 /* RZMapViewController.m */,
+				FE88F74514BE4D1400EBA4E3 /* RZMapViewController_iPhone.xib */,
+				FE88F74814BE4D1400EBA4E3 /* RZMapViewController_iPad.xib */,
+				FE88F73714BE4D1400EBA4E3 /* Supporting Files */,
+			);
+			path = "RZMapView-Demo";
+			sourceTree = "<group>";
+		};
+		FE88F73714BE4D1400EBA4E3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE88F73814BE4D1400EBA4E3 /* RZMapView-Demo-Info.plist */,
+				FE88F73914BE4D1400EBA4E3 /* InfoPlist.strings */,
+				FE88F73C14BE4D1400EBA4E3 /* main.m */,
+				FE88F73E14BE4D1400EBA4E3 /* RZMapView-Demo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FE88F75414BE4D7800EBA4E3 /* RZMapView */ = {
+			isa = PBXGroup;
+			children = (
+				FE88F75514BE4D7800EBA4E3 /* RZMapView.h */,
+				FE88F75614BE4D7800EBA4E3 /* RZMapView.m */,
+				FE88F75714BE4D7800EBA4E3 /* RZMapViewLocation.h */,
+				FE88F75814BE4D7800EBA4E3 /* RZMapViewLocation.m */,
+				FE88F75914BE4D7800EBA4E3 /* RZMapViewPin.h */,
+				FE88F75A14BE4D7800EBA4E3 /* RZMapViewPin.m */,
+			);
+			path = RZMapView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE88F72B14BE4D1400EBA4E3 /* RZMapView-Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE88F74D14BE4D1400EBA4E3 /* Build configuration list for PBXNativeTarget "RZMapView-Demo" */;
+			buildPhases = (
+				FE88F72814BE4D1400EBA4E3 /* Sources */,
+				FE88F72914BE4D1400EBA4E3 /* Frameworks */,
+				FE88F72A14BE4D1400EBA4E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RZMapView-Demo";
+			productName = "RZMapView-Demo";
+			productReference = FE88F72C14BE4D1400EBA4E3 /* RZMapView-Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE88F72314BE4D1400EBA4E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Angry Fish Studios";
+			};
+			buildConfigurationList = FE88F72614BE4D1400EBA4E3 /* Build configuration list for PBXProject "RZMapView-Demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FE88F72114BE4D1400EBA4E3;
+			productRefGroup = FE88F72D14BE4D1400EBA4E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE88F72B14BE4D1400EBA4E3 /* RZMapView-Demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE88F72A14BE4D1400EBA4E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE88F73B14BE4D1400EBA4E3 /* InfoPlist.strings in Resources */,
+				FE88F74714BE4D1400EBA4E3 /* RZMapViewController_iPhone.xib in Resources */,
+				FE88F74A14BE4D1400EBA4E3 /* RZMapViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE88F72814BE4D1400EBA4E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE88F73D14BE4D1400EBA4E3 /* main.m in Sources */,
+				FE88F74114BE4D1400EBA4E3 /* RZMapViewAppDelegate.m in Sources */,
+				FE88F74414BE4D1400EBA4E3 /* RZMapViewController.m in Sources */,
+				FE88F75B14BE4D7800EBA4E3 /* RZMapView.m in Sources */,
+				FE88F75C14BE4D7800EBA4E3 /* RZMapViewLocation.m in Sources */,
+				FE88F75D14BE4D7800EBA4E3 /* RZMapViewPin.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FE88F73914BE4D1400EBA4E3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE88F73A14BE4D1400EBA4E3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FE88F74514BE4D1400EBA4E3 /* RZMapViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE88F74614BE4D1400EBA4E3 /* en */,
+			);
+			name = RZMapViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		FE88F74814BE4D1400EBA4E3 /* RZMapViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE88F74914BE4D1400EBA4E3 /* en */,
+			);
+			name = RZMapViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE88F74B14BE4D1400EBA4E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FE88F74C14BE4D1400EBA4E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE88F74E14BE4D1400EBA4E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RZMapView-Demo/RZMapView-Demo-Prefix.pch";
+				INFOPLIST_FILE = "RZMapView-Demo/RZMapView-Demo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FE88F74F14BE4D1400EBA4E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RZMapView-Demo/RZMapView-Demo-Prefix.pch";
+				INFOPLIST_FILE = "RZMapView-Demo/RZMapView-Demo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE88F72614BE4D1400EBA4E3 /* Build configuration list for PBXProject "RZMapView-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE88F74B14BE4D1400EBA4E3 /* Debug */,
+				FE88F74C14BE4D1400EBA4E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE88F74D14BE4D1400EBA4E3 /* Build configuration list for PBXNativeTarget "RZMapView-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE88F74E14BE4D1400EBA4E3 /* Debug */,
+				FE88F74F14BE4D1400EBA4E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE88F72314BE4D1400EBA4E3 /* Project object */;
+}
