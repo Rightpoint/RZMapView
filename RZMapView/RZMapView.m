@@ -109,8 +109,6 @@
     CGFloat containerRatio = containmentSize.width / containmentSize.height;
     CGFloat mapRatio = mapImageSize.width / mapImageSize.height;
     
-//    NSLog(@"Ratios - Container: %f Map: %f", containerRatio, mapRatio);
-    
     if (containerRatio > 1.0 && mapRatio > 1.0)
     {
         if (mapRatio > containerRatio)
@@ -204,7 +202,12 @@
     [_mapImage release];
     _mapImage = [mapImage retain];
     
+    // hold on to the old zoom scale so we can reset it after the image is swapped out. 
+    float oldZoomScale = self.zoomScale;
+    CGPoint oldOffset = self.contentOffset;
     
+    // set the zoom scale to 1 so everything is positioned correctly.
+    self.zoomScale = 1.0;
     
     [self.mapImageView removeFromSuperview];
     self.mapImageView = [[[UIImageView alloc] initWithImage:_mapImage] autorelease];
@@ -212,11 +215,18 @@
     self.contentSize = self.mapImage.size;
     [self addSubview:self.mapImageView];
     
+    // Re-add the regions to the new image
     [self.mapRegionViews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    
     for (UIView *view in self.mapRegionViews)
     {
-        [self addSubview:view];
+        [self.mapImageView addSubview:view];
+    }
+    
+    // re-add the pins to the new image
+    [self.mapPinViews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    for (UIView *view in self.mapPinViews)
+    {
+        [self.mapImageView addSubview:view];
     }
     
     NSLog(@"Image Attrs - ImageScale: %f ImageViewContentScale: %f ScrollViewContentScale: %f", _mapImage.scale, self.mapImageView.contentScaleFactor, self.contentScaleFactor);
@@ -226,8 +236,6 @@
     
     CGFloat containerRatio = containmentSize.width / containmentSize.height;
     CGFloat mapRatio = mapImageSize.width / mapImageSize.height;
-    
-    NSLog(@"Ratios - Container: %f Map: %f", containerRatio, mapRatio);
     
     if (containerRatio > 1.0 && mapRatio > 1.0)
     {
@@ -284,7 +292,9 @@
         self.minimumZoomScale = scaleFactor;
     }
     
-    self.zoomScale = self.minimumZoomScale;
+    self.zoomScale = oldZoomScale;
+    self.contentOffset = oldOffset;
+    
     self.maximumZoomScale = 1.0;
 }
 
@@ -393,22 +403,60 @@
         
         if (animated)
         {
-            pin.transform = CGAffineTransformMakeScale(0.1, 0.1);
-            //pin.center = CGPointMake(pin.center.x, pin.center.y - (pin.bounds.size.height / 2.0));
+            //figure out the final pin placement
+            CGPoint pinCenterFinish = pin.location.center;
             
-            [UIView animateWithDuration:0.35 
-                                  delay:delay 
-                                options:0
-                             animations:^{
-                                pin.transform = scaleTransform;
-                                pin.center = pin.location.center;
-                             } 
-                             completion:^(BOOL finished) {
-                                 if (self.delegate && [self.delegate respondsToSelector:@selector(mapView:pinAddAnimationDidFinish:)])
-                                 {
-                                     [self.delegate mapView:self pinAddAnimationDidFinish:pin];
-                                 }
-                             }];
+            if (CGPointEqualToPoint(pinCenterFinish, CGPointZero)) {
+                pinCenterFinish = self.center;
+            }
+            
+            //position the pin at the top (just offscreen)
+            //CGPoint pinCenterStart = CGPointMake(pinCenterFinish.x, 0);
+            CGPoint pinCenterStart = CGPointMake(pinCenterFinish.x, (self.contentOffset.y * scale) - pin.frame.size.height);	//note, just offscreen be height of the pin button
+            
+            // create the path for the keyframe animation
+            CGMutablePathRef thePath = CGPathCreateMutable();
+            CGPathMoveToPoint(thePath,NULL,pinCenterStart.x,pinCenterStart.y);
+            CGPathAddLineToPoint(thePath, NULL, pinCenterFinish.x, pinCenterFinish.y);
+            CGPathAddCurveToPoint(thePath,NULL,
+                                  pinCenterFinish.x,pinCenterFinish.y,
+                                  pinCenterFinish.x,pinCenterFinish.y - (kBounceHeight * scale),
+                                  pinCenterFinish.x,pinCenterFinish.y);
+            CGPathAddCurveToPoint(thePath,NULL,
+                                  pinCenterFinish.x,pinCenterFinish.y,
+                                  pinCenterFinish.x,pinCenterFinish.y - (kBounceHeight * scale * 0.5),
+                                  pinCenterFinish.x,pinCenterFinish.y);
+            CGPathAddCurveToPoint(thePath,NULL,
+                                  pinCenterFinish.x,pinCenterFinish.y,
+                                  pinCenterFinish.x,pinCenterFinish.y - (kBounceHeight * scale * 0.25),
+                                  pinCenterFinish.x,pinCenterFinish.y);
+            
+            CAKeyframeAnimation *theAnimation=[CAKeyframeAnimation animationWithKeyPath:@"position"];
+            theAnimation.path=thePath;
+            
+            CAAnimationGroup *theGroup = [CAAnimationGroup animation];
+            theGroup.animations=[NSArray arrayWithObject:theAnimation];
+            
+            // set the timing function for the group and the animation duration
+            theGroup.timingFunction=[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+            
+            if (!self.pinAddAnimationSimultaneous && addCount > 1)
+            {
+                theGroup.duration = 1.8;
+                theGroup.beginTime = CACurrentMediaTime()+delay;
+                pin.hidden = YES;
+            }
+            else
+            {
+                theGroup.duration=2.0;
+            }
+            theGroup.delegate = self;
+            [theGroup setValue:pin forKey:@"RZMapViewPinAnimationKey"];
+            // release the path
+            CFRelease(thePath);
+            
+            // add animation to pin layer to trigger animation
+            [pin.layer addAnimation:theGroup forKey:@"animatePosition"];
             
             delay += 0.2 / (double)addCount;
         }
