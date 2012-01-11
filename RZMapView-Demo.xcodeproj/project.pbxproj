@@ -19,6 +19,7 @@
 		FE88F75B14BE4D7800EBA4E3 /* RZMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88F75614BE4D7800EBA4E3 /* RZMapView.m */; };
 		FE88F75C14BE4D7800EBA4E3 /* RZMapViewLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88F75814BE4D7800EBA4E3 /* RZMapViewLocation.m */; };
 		FE88F75D14BE4D7800EBA4E3 /* RZMapViewPin.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88F75A14BE4D7800EBA4E3 /* RZMapViewPin.m */; };
+		FE88F76014BE51F000EBA4E3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE88F75F14BE51F000EBA4E3 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		FE88F75814BE4D7800EBA4E3 /* RZMapViewLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZMapViewLocation.m; sourceTree = "<group>"; };
 		FE88F75914BE4D7800EBA4E3 /* RZMapViewPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZMapViewPin.h; sourceTree = "<group>"; };
 		FE88F75A14BE4D7800EBA4E3 /* RZMapViewPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZMapViewPin.m; sourceTree = "<group>"; };
+		FE88F75F14BE51F000EBA4E3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE88F76014BE51F000EBA4E3 /* QuartzCore.framework in Frameworks */,
 				FE88F73114BE4D1400EBA4E3 /* UIKit.framework in Frameworks */,
 				FE88F73314BE4D1400EBA4E3 /* Foundation.framework in Frameworks */,
 				FE88F73514BE4D1400EBA4E3 /* CoreGraphics.framework in Frameworks */,
@@ -79,6 +82,7 @@
 		FE88F72F14BE4D1400EBA4E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FE88F75F14BE51F000EBA4E3 /* QuartzCore.framework */,
 				FE88F73014BE4D1400EBA4E3 /* UIKit.framework */,
 				FE88F73214BE4D1400EBA4E3 /* Foundation.framework */,
 				FE88F73414BE4D1400EBA4E3 /* CoreGraphics.framework */,
