@@ -6,7 +6,9 @@
 //
 
 #import "RZMapViewLocation.h"
+#import <QuartzCore/QuartzCore.h>
 
+#define RZMAPVIEWLOCATIONDEBUGFLAG 0
 
 @interface RZMapViewLocation ()
 
@@ -38,6 +40,11 @@
         self.rect = rect;
         self.locationName = name;
         self.locationId = locationId;
+        
+#if RZMAPVIEWLOCATIONDEBUGFLAG
+        self.layer.borderWidth = 1.0;
+        self.layer.borderColor = [[UIColor darkGrayColor] CGColor];
+#endif
     }
     
     return self;
