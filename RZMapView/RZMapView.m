@@ -26,6 +26,7 @@
 - (void)doubleTapZoomTriggered:(UITapGestureRecognizer*)gestureRecognizer;
 - (void)idleTapTriggered:(UITapGestureRecognizer*)gestureRecognizer;
 - (void)regionTapped:(UITapGestureRecognizer*)gestureRecognizer;
+//- (void)pinTapped:(UITapGestureRecognizer*)gestureRecognizer;
 
 @end
 
@@ -108,6 +109,7 @@
     
     CGFloat containerRatio = containmentSize.width / containmentSize.height;
     CGFloat mapRatio = mapImageSize.width / mapImageSize.height;
+    float oldMinZoomScale = self.minimumZoomScale;
     
     if (containerRatio > 1.0 && mapRatio > 1.0)
     {
@@ -162,6 +164,11 @@
         CGFloat horizPadding = (((mapImageSize.height * containerRatio) - mapImageSize.width) * scaleFactor) / 2.0;
         self.contentInset = UIEdgeInsetsMake(0, horizPadding, 0, horizPadding);
         self.minimumZoomScale = scaleFactor;
+    }
+    
+    if (!self.zooming)
+    {
+        self.zoomScale = (self.zoomScale > self.minimumZoomScale && oldMinZoomScale != self.zoomScale) ? self.zoomScale : self.minimumZoomScale;
     }
 }
 
@@ -706,7 +713,7 @@
     }
     else
     {
-        NSLog(@"Stopped Region Trigger");
+//        NSLog(@"Stopped Region Trigger");
     }
 }
 
