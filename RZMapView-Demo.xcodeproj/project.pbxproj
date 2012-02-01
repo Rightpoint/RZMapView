@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE7259A114D8BA0E00298908 /* MapGrid.png in Resources */ = {isa = PBXBuildFile; fileRef = FE7259A014D8BA0E00298908 /* MapGrid.png */; };
 		FE88F73114BE4D1400EBA4E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE88F73014BE4D1400EBA4E3 /* UIKit.framework */; };
 		FE88F73314BE4D1400EBA4E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE88F73214BE4D1400EBA4E3 /* Foundation.framework */; };
 		FE88F73514BE4D1400EBA4E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE88F73414BE4D1400EBA4E3 /* CoreGraphics.framework */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE7259A014D8BA0E00298908 /* MapGrid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapGrid.png; sourceTree = "<group>"; };
 		FE88F72C14BE4D1400EBA4E3 /* RZMapView-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RZMapView-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE88F73014BE4D1400EBA4E3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FE88F73214BE4D1400EBA4E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -99,6 +101,7 @@
 				FE88F74314BE4D1400EBA4E3 /* RZMapViewController.m */,
 				FE88F74514BE4D1400EBA4E3 /* RZMapViewController_iPhone.xib */,
 				FE88F74814BE4D1400EBA4E3 /* RZMapViewController_iPad.xib */,
+				FE7259A014D8BA0E00298908 /* MapGrid.png */,
 				FE88F73714BE4D1400EBA4E3 /* Supporting Files */,
 			);
 			path = "RZMapView-Demo";
@@ -182,6 +185,7 @@
 				FE88F73B14BE4D1400EBA4E3 /* InfoPlist.strings in Resources */,
 				FE88F74714BE4D1400EBA4E3 /* RZMapViewController_iPhone.xib in Resources */,
 				FE88F74A14BE4D1400EBA4E3 /* RZMapViewController_iPad.xib in Resources */,
+				FE7259A114D8BA0E00298908 /* MapGrid.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
