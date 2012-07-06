@@ -1,6 +1,5 @@
 //
 //  RZMapViewPin.h
-//  SolidWorks World 2012
 //
 //  Created by Joe Goullaud on 1/4/12.
 //  Copyright (c) 2012 Raizlabs. All rights reserved.
