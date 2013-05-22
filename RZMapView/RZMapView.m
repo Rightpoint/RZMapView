@@ -534,6 +534,16 @@
     }
 }
 
+- (void)pinViewHasInteraction:(RZMapViewPin *)pin
+{
+    self.scrollEnabled = NO;
+}
+
+- (void)pinViewLostInteraction:(RZMapViewPin *)pin
+{
+    self.scrollEnabled = YES;
+}
+
 #pragma mark = UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView

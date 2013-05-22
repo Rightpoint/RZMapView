@@ -85,6 +85,7 @@
     
     [self.pinImageView removeFromSuperview];
     self.pinImageView = [[[UIImageView alloc] initWithImage:self.pinImage] autorelease];
+    self.pinImageView.exclusiveTouch = YES;
     self.pinImageView.userInteractionEnabled = YES;
     [self.pinImageView addGestureRecognizer:self.pinTappedRecognizer];
     [self addSubview:self.pinImageView];
@@ -92,6 +93,17 @@
     CGPoint currentCenter = self.center;
     [self configurePinView];
     self.center = currentCenter;
+}
+
+- (void)setPinHighlightedImage:(UIImage *)pinImage {
+    if (!self.pinImageView) {
+        self.pinImageView = [[[UIImageView alloc] initWithImage:self.pinImage] autorelease];
+        self.pinImageView.userInteractionEnabled = YES;
+        self.pinImageView.exclusiveTouch = YES;
+        [self.pinImageView addGestureRecognizer:self.pinTappedRecognizer];
+        [self addSubview:self.pinImageView];
+    }
+    [self.pinImageView setHighlightedImage:pinImage];
 }
 
 - (void)setActive:(BOOL)active
@@ -252,6 +264,30 @@
     {
         [self.delegate pinViewTapped:self];
     }
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.pinImageView setHighlighted:YES];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(pinViewHasInteraction:)]) {
+        [self.delegate pinViewHasInteraction:self];
+    }
+}
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.pinImageView setHighlighted:NO];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(pinViewLostInteraction:)]) {
+        [self.delegate pinViewHasInteraction:self];
+    }
+}
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    for (UITouch* touch in touches) {
+        CGPoint p = [touch locationInView:self];
+        if (p.x > self.pinImageView.frame.size.width || p.y > self.pinImageView.frame.size.height || p.x < 0 || p.y < 0) {
+            [self setSelected:NO];
+        }
+    }
+}
+- (void)setSelected:(BOOL)selected {
+    [self.pinImageView setHighlighted:selected];
 }
 
 @end
